@@ -1,0 +1,118 @@
+.NewForm{
+    display: flex;
+    justify-content: center;
+    font-family: 'Mulish';
+}
+
+#form-title{
+    font-family: 'Mulish';
+    color:darkslategray;
+}
+
+#input-form {
+    width: 50vw;
+    margin: 2% 10%;
+    background-color: white;
+    padding: 10px 50px;
+    border-radius: 5px;
+    height: 100%;
+    box-shadow: 4px 4px 2px darkslategray;
+}
+
+.input-div{
+    display: flex;
+    align-items: center;
+    margin: 5px 10px;
+}
+
+.input-label{
+    width: 20vw;
+}
+
+.input-text{
+    font-size: 15px;
+    border: 1px solid gray;
+    height: 25px;
+}
+
+#title-input{
+    width: 11vw;
+}
+
+#description{
+    width: 17vw;
+}
+
+#inputs {
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 20px;
+}
+
+option, select {
+    color: black;
+    font-size: 15px;
+    border: 1px solid gray;
+    width: 10vw;
+    height: 25px;
+}
+
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+#upload{
+    display:flex;
+    align-items: center;
+}
+
+.image-upload-label{
+    font-family: 'Mulish';
+    border: solid 1px gray;
+    height: 25px;
+    border-radius:0.12em;
+    text-align:center;
+    font-size: 15px;
+    transition: all 0.2s;
+    width: 110px;
+    color: black;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding-top: 5px;
+    margin-right: 12vw;
+}
+
+.image-upload-label:hover{
+    color: white;
+    background-color:rgb(42, 51, 43);
+}
+
+#filename{
+    font-size: 15px;
+    margin-top: 12px;
+}
+
+.button{
+    display: inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid gray;
+    margin: 1em 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family: 'Mulish';
+    text-align:center;
+    transition: all 0.2s;
+    background-color: white;
+    width: 100px;
+    margin: 2% 39%;
+    font-size: 15px;
+}
+.button:hover{
+    color: white;
+    background-color:rgb(42, 51, 43);
+}

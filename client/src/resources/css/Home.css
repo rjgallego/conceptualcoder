@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(219, 219, 219);
+}
+
+.Articles {
+  margin: 0 50px;
+  background-color: rgb(219, 219, 219);
+  background-image: none;
+}
+  

@@ -1,0 +1,30 @@
+.Footer {
+    background-color: rgb(42, 51, 43);
+    height: 3rem;
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 0;
+ }
+
+ #footer-title {
+    font-family: 'Playfair Display';
+    font-size: 15px;
+ }
+
+ .footer-link {
+    font-family: 'Mulish';
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    width: 10vw;
+    text-align: center;
+ }
+
+
+ 
+ 

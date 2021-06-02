@@ -1,0 +1,15 @@
+.ArticleDiv{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 60vh;
+}
+
+.Articles{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    width: 93%;
+}

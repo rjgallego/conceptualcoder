@@ -1,0 +1,73 @@
+.Form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    background-color: white;
+    width: 45vw;
+    height: 60vh;
+    border-radius: 5px;
+}
+
+.user-logo{
+    width: 7em;
+}
+
+#login-form{
+    margin-top: 20px;
+}
+
+.input-field{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid gray;
+    margin: 10px 0;
+}
+
+.user-input{
+    font-family: 'Mulish';
+    font-size: 15px;
+    width: 150px;
+    float: right;
+    height: 30px;
+    border: none;
+}
+
+
+.icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px 0 5px;
+    color: gray;
+    height: 32px;
+    width: 30px;
+}
+
+#submit-button{
+    padding:0.35em 1.2em;
+    border:0.1em solid grey;
+    margin: 10px auto;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family: 'Mulish';
+    color:black;
+    text-align:center;
+    transition: all 0.2s;
+    background-color: white;
+    width: 100px;
+    margin-left: 25%;
+}
+
+#submit-button:hover{
+    color: white;
+    background-color:rgb(42, 51, 43);
+}
+
+
+#error-message{
+    color: red;
+}
