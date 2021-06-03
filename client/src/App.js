@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import {Home} from './components/HomePage/Home';
 import {ArticlePage} from './components/ArticlePage/ArticlePage';
-import {FormPage} from './components/FormPage/FormPage';
+import {NewFormPage} from './components/NewFormPage/NewFormPage';
 import {DeletePage} from './components/DeletePage/DeletePage';
 import {LoginPage} from './components/LoginPage/LoginPage';
 import {AboutMe} from './components/AboutMePage/AboutMe';
@@ -16,11 +16,11 @@ class App extends React.Component {
              <Switch>
                 <Route exact path="/" component={Home}/>
                 <Route path="/article/:id" component={ArticlePage} />
-                <Route path="/form" component={FormPage} />
+                <Route path="/form" component={NewFormPage} />
                 <Route path="/delete/:id" component={DeletePage} />
                 <Route path="/edit/:id" component={EditPage} />
                 <Route path="/login" component={LoginPage}/>
-                <Route path="/aboutme" component={AboutMe}/>
+                <Route path="/about-me" component={AboutMe}/>
              </Switch>
           </div>
       );
