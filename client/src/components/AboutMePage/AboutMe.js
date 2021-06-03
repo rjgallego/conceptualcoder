@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../resources/css/AboutMe';
+import '../../resources/css/AboutMe.css';
 import {SearchBar} from '../SearchBar';
 import {Footer} from '../Footer';
 

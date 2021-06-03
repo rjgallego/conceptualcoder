@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import '../../resources/css/ArticlePage';
+import '../../resources/css/ArticlePage.css';
 import {SearchBar} from '../SearchBar';
 import {Footer} from '../Footer';
 import {Link} from 'react-router-dom';
