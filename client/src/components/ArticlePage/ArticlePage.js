@@ -1,5 +1,6 @@
 import React from 'react';
-import '../../resources/css/ArticlePage.css';
+import moment from 'moment';
+import './ArticlePage.css';
 import {SearchBar} from '../SearchBar';
 import {Footer} from '../Footer';
 import {Link} from 'react-router-dom';
@@ -17,7 +18,6 @@ export class ArticlePage extends React.Component {
       }
 
       this.getArticle = this.getArticle.bind(this);
-      this.getDate = this.getDate.bind(this);
       this.displayButton = this.displayButton.bind(this);
       this.updateState = this.updateState.bind(this);
    }   
@@ -33,30 +33,6 @@ export class ArticlePage extends React.Component {
          .then(response => response.json())
          .then(jsonResponse => this.setState({ article: jsonResponse}));
    }
-
-   getDate(){
-      const date = new Date(this.state.article.date);
-      const mm = String(date.getMonth()).padStart(2, '0');
-      const dd = String(date.getDate() + 1).padStart(2, '0');
-      const yyyy = date.getFullYear();
-      const today = mm + "-" + dd + "-" + yyyy;
-
-      return today;
-  }
-
-//   checkLogin(){
-//    fetch(this.state.link + "/users/checkLogin", {
-//        method: 'get',
-//           credentials: "include",
-//           headers: {
-//               'Content-Type': 'application/json',
-//               'Accept': 'application/json',
-//               'Access-Control-Allow-Origin': this.state.link
-//           }
-//     })
-//     .then(response => response.json())
-//     .then(jsonResponse => this.setState({ loggedIn: jsonResponse.loggedIn}));
-//    }
 
    displayButton() {
       if(this.state.loggedIn) {
@@ -81,7 +57,7 @@ export class ArticlePage extends React.Component {
              <SearchBar />
              {this.displayButton()}
              <div  className="Article">
-               <p className="date">{this.getDate()}</p>
+               <p className="date">{moment(new Date(this.state.article.date)).format('MM/DD/YYYY')}</p>
                <h1 className="title">{this.state.article.title}</h1>
                <h2 className="summary">{this.state.article.summary}</h2>
                <p className="body">{ReactHtmlParser(this.state.article.body)}</p>
