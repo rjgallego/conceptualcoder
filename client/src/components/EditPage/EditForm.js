@@ -70,13 +70,10 @@ export class EditForm extends React.Component {
         }
 
         axios.put(`${this.state.link}/edit`, data).then(res => {
-            console.log(res)
-        });
-
-        this.setState({
-            reroute: true
+            this.setState({
+                reroute: true
+            })
         })
-
     }
 
     render() {
