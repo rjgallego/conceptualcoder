@@ -52,27 +52,12 @@ export class Articles extends React.Component {
 
      }
 
-    //  checkLogin(){
-    //     fetch(`${this.state.link}/users/checkLogin`, {
-    //         method: 'get',
-    //            credentials: "include",
-    //            headers: {
-    //                'Content-Type': 'application/json',
-    //                'Accept': 'application/json',
-    //                'Access-Control-Allow-Origin': this.state.link
-    //            }
-    //      })
-    //      .then(response => response.json())
-    //      .then(jsonResponse => this.setState({ loggedIn: jsonResponse.loggedIn}));
-    //  }
-
      displayButton() {
          if(this.state.loggedIn) {
              return <Link to="/form" className="button" id="new-button">New Article</Link>
          }
      }
   
-
     render() {
         return (  
             <div className="ArticleDiv">
