@@ -100,7 +100,7 @@ export class Cover extends React.Component {
                   <h1 id="home-title">The Conceptual Coder</h1>
                   <div id="social">
                     <a href="https://github.com/rjgallego"><FontAwesomeIcon className="social-icon" icon={faGithub} size="lg" /></a>
-                    <a href="https://www.linkedin.com/in/rheanna-gallego-aa0007110/"><FontAwesomeIcon className="social-icon" icon={faLinkedin} size="lg" /></a>
+                    <a href="https://www.linkedin.com/in/rheanna-pena-aa0007110/"><FontAwesomeIcon className="social-icon" icon={faLinkedin} size="lg" /></a>
                     <a href="/"><FontAwesomeIcon className="social-icon" icon={faEnvelope} size="lg" /></a>
                   </div>
                </div>
