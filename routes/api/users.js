@@ -71,9 +71,7 @@ userRouter.post('/login', auth.optional, (req, res, next) => {
 
 userRouter.get('/logout', auth.optional, (req, res) => {
     res.setHeader('Access-Control-Allow-Credentials', 'true')
-    console.log('Logging out user')
     req.logout();
-    console.log(req.session)
     return res.json({loggedIn: false})
 })
 
@@ -87,7 +85,6 @@ userRouter.get('/current', auth.required, (req, res, next) => {
             if(!user) {
                 return res.sendStatus(400);
             }
-            console.log(req.session);
             return res.json({ user: user.toAuthJSON() });
         })
 });
