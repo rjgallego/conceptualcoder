@@ -1,19 +1,9 @@
 const express = require('express');
-const multer = require('multer');
-const mongoose = require('mongoose');
 const editRouter = express.Router();
-const path = require('path');
 
 let Article = require('../models/Article');
 
-editRouter.put('/', (req, res, next) => {
-    const date = new Date();
-    const mm = String(date.getMonth()).padStart(2, '0');
-    const dd = String(date.getDate() + 1).padStart(2, '0');
-    const yyyy = date.getFullYear();
-    const today = mm + "-" + dd + "-" + yyyy;
-    console.log(req.body)
-
+editRouter.put('/', (req, res) => {
     const filter = {
         _id: req.body.id
     }
@@ -31,7 +21,6 @@ editRouter.put('/', (req, res, next) => {
             article: result
         })
     }).catch(err => {
-        console.log(err);
         res.status(500).json({
             error: err
         });
