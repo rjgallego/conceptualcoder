@@ -12,12 +12,6 @@ const upload = multer({storage: storage});
 const imgURL = 'https://conceptualcoder.s3-us-west-1.amazonaws.com/'
 
 newRouter.post('/', upload.single("img"), (req, res) => {
-    const date = new Date();
-    const mm = String(date.getMonth()).padStart(2, '0');
-    const dd = String(date.getDate() + 1).padStart(2, '0');
-    const yyyy = date.getFullYear();
-    const today = mm + "-" + dd + "-" + yyyy;
-
     const file = req.file;
     const body = req.body;
     
