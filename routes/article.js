@@ -3,10 +3,9 @@ const articleRouter = express.Router();
 
 let Article = require('../models/Article');
 
-/* GET all articles from the database */
 const getArticle = function(id, done) {
   Article.findById(id, function(err, data){
-    if(err) console.log(err)
+    if(err) res.send(err)
     else done(null, data)
   })
 }
@@ -15,7 +14,7 @@ const getArticle = function(id, done) {
 articleRouter.get('/:id', function(req, res){
   const id = req.params.id;
   getArticle(id, function(err, data){
-    if(err) console.log(err)
+    if(err) res.send(err)
     else{
       res.send(data);
     }
