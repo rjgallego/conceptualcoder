@@ -13,8 +13,7 @@ export class ArticlePage extends React.Component {
       super(props);
       this.state = {
          id: this.props.match.params.id,
-         article: {},
-         link: process.env.NODE_ENV === 'production' ? 'https://conceptualcoder.herokuapp.com' : 'http://localhost:4001'
+         article: {}
       }
 
       this.getArticle = this.getArticle.bind(this);
@@ -29,7 +28,7 @@ export class ArticlePage extends React.Component {
    }
 
    getArticle() {
-      fetch(`${this.state.link}/article/${this.state.id}`)
+      fetch(`/article/${this.state.id}`)
          .then(response => response.json())
          .then(jsonResponse => this.setState({ article: jsonResponse}));
    }
