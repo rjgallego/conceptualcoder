@@ -40,10 +40,6 @@ app.use(cookieParser("coderSession"));
 
 if(process.env.ENVIRONMENT === 'development') app.use(logger('dev'));
 
-
-app.use(express.static(path.join(__dirname, 'client/build')));
-
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(session({ 
@@ -62,8 +58,10 @@ app.use('/delete', deleteRouter);
 app.use('/users', userRouter);
 app.use('/edit', editRouter);
 
+app.use(express.static(path.join(__dirname, 'client/build')));
+
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+  res.sendFile(path.join(__dirname, 'client/build', 'index.html'))
 });
 
 
