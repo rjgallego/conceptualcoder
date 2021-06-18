@@ -1,4 +1,3 @@
-const mongoose = require('mongoose');
 const passport = require('../../config/passport');
 const userRouter = require('express').Router();
 const auth = require('./auth');
