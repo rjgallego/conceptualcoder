@@ -4,7 +4,6 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-// var cors = require('cors');
 var mongoose = require('mongoose');
 var session = require('express-session');
 var bodyParser = require('body-parser');
@@ -18,13 +17,11 @@ var userRouter = require('./routes/api/users');
 var editRouter = require('./routes/edit');
 
 var app = express();
-// let corsOptions = {};
 
 const PORT = process.env.PORT || 4001;
 
 mongoose.promise = global.Promise;
 
-//connect to database
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -41,27 +38,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser("coderSession"));
 
-if(process.env.ENVIRONMENT === 'development'){
-  app.use(logger('dev'));
-  // app.use(express.static(path.join(__dirname, 'public')));
+if(process.env.ENVIRONMENT === 'development') app.use(logger('dev'));
 
-  // corsOptions = {
-  //   origin: 'http://localhost:3000',
-  //   credentials: true
-  // };
-} 
-// else if(process.env.ENVIRONMENT === 'production'){
-//   app.use(express.static(path.join(__dirname, 'client', 'build')));
-//   corsOptions = {
-//     origin: 'https://conceptualcoder.herokuapp.com/',
-//     credentials: true
-//   };
-// } 
 
 app.use(express.static(path.join(__dirname, 'client', 'build')));
 
 
-//app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(session({ 
