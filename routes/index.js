@@ -21,7 +21,6 @@ indexRouter.get('/all', function(req, res){
   findAllArticles(function(err, data){
     if(err) res.send(err)
     else{
-      res.setHeader('Access-Control-Allow-Credentials', 'true')
       res.send(data);
     }
   })
