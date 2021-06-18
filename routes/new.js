@@ -33,7 +33,6 @@ newRouter.post('/', upload.single("img"), (req, res) => {
         if(err){
             return res.status(500).json({error: true, Message: err});
         } else {
-            console.log("Image uploaded")
             res.send({data});
 
             let articleInfo = {
@@ -48,11 +47,8 @@ newRouter.post('/', upload.single("img"), (req, res) => {
             const article = new Article(articleInfo);
 
             article.save(function(err, newArticle) {
-                if(err){
-                    console.log(err)
-                } else {
-                    console.log("New Article submitted")
-                }
+                if(err) res.send(err)
+                else res.send(newArticle)
             })
         }
     })
