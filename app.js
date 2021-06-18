@@ -51,7 +51,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('/', indexRouter);
+//app.use('/', indexRouter);
 app.use('/new', newRouter);
 app.use('/article', articleRouter);
 app.use('/delete', deleteRouter);
