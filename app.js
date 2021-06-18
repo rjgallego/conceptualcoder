@@ -62,21 +62,10 @@ app.use('/delete', deleteRouter);
 app.use('/users', userRouter);
 app.use('/edit', editRouter);
 
-app.use(function(req, res, next) {
-  next(createError(404));
-});
-
-app.use(function(err, req, res) {
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  res.status(err.status || 500);
-  res.render('error');
-});
-
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
 });
+
 
 app.listen(PORT, () => {
   console.log("Listening on port " + PORT);
