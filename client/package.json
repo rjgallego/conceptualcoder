@@ -24,6 +24,7 @@
     "suneditor-react": "^2.14.6"
   },
   "scripts": {
+    "watch": "cra-build-watch",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
