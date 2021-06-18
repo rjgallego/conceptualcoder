@@ -41,7 +41,7 @@ app.use(cookieParser("coderSession"));
 if(process.env.ENVIRONMENT === 'development') app.use(logger('dev'));
 
 
-app.use(express.static(path.join(__dirname, 'client', 'build')));
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 
 app.use(bodyParser.json());
