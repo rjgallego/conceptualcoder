@@ -17,9 +17,7 @@ export class Cover extends React.Component {
            filter: '',
            lastFilter: '',
            route: '/login',
-           loginText: 'Login',
-           link: process.env.NODE_ENV === 'production' ? 'https://conceptualcoder.herokuapp.com' : 'http://localhost:4001',
-           src: process.env.NODE_ENV === 'production' ? 'https://conceptualcoder.herokuapp.com' : 'http://localhost:3000'
+           loginText: 'Login'
          }
   
         this.logoutUser = this.logoutUser.bind(this);
@@ -49,13 +47,12 @@ export class Cover extends React.Component {
      }
   
      logoutUser(){
-        fetch(`${this.state.link}/users/logout`, {
+        fetch('/users/logout', {
            method: 'get',
               credentials: "include",
               headers: {
                   'Content-Type': 'application/json',
-                  'Accept': 'application/json',
-                  'Access-Control-Allow-Origin': this.state.src
+                  'Accept': 'application/json'
               }
         })
         .then(response => response.json())
