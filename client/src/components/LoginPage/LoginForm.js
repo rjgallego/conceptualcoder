@@ -13,9 +13,7 @@ export class LoginForm extends React.Component {
         this.state = {
             user: {},
             redirect: false,
-            returnedUser: {},
-            link: process.env.NODE_ENV === 'production' ? 'https://conceptualcoder.herokuapp.com' : 'http://localhost:4001',
-            src: process.env.NODE_ENV === 'production' ? 'https://conceptualcoder.herokuapp.com' : 'http://localhost:3000'
+            returnedUser: {}
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -37,13 +35,12 @@ export class LoginForm extends React.Component {
             user: this.state.user
         }
 
-        fetch(`${this.state.link}/users/login`, {
+        fetch('/users/login', {
             method: 'post',
             credentials: "include",
             headers: {
                 'Content-Type': 'application/json',
-                'Accept': 'application/json',
-                'Access-Control-Allow-Origin': this.state.src
+                'Accept': 'application/json'
             },
             body: JSON.stringify(user)
         })
