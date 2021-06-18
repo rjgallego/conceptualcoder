@@ -16,8 +16,8 @@ export class EditForm extends React.Component {
             description: '',
             firstParagraph: '',
             topic: '',
-            reroute: false,
-            link: process.env.NODE_ENV === 'production' ? 'https://conceptualcoder.herokuapp.com' : 'http://localhost:4001'
+            reroute: false
+            // link: process.env.NODE_ENV === 'production' ? 'https://conceptualcoder.herokuapp.com' : 'http://localhost:4001'
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -30,7 +30,7 @@ export class EditForm extends React.Component {
     }
 
     getArticle() {
-        fetch(`${this.state.link}/article/${this.props.id}`)
+        fetch(`/article/${this.props.id}`)
            .then(response => response.json())
            .then(jsonResponse => {
                this.setState(
@@ -69,7 +69,7 @@ export class EditForm extends React.Component {
             topic: this.state.topic
         }
 
-        axios.put(`${this.state.link}/edit`, data).then(res => {
+        axios.put('/edit', data).then(res => {
             this.setState({
                 reroute: true
             })
@@ -83,7 +83,7 @@ export class EditForm extends React.Component {
         return (
             <div className="NewForm">
                 <form id="input-form" onSubmit={this.handleSubmit}>
-                    <h1 id="form-title">New post:</h1>
+                    <h1 id="form-title">Edit post:</h1>
                     <div id="inputs">
                         <div className="input-div">
                             <div className="input-label">

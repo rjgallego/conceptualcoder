@@ -9,9 +9,7 @@ export class EditPage extends React.Component {
         super(props);
 
         this.state = {
-            redirect: false,
-            link: process.env.NODE_ENV === 'production' ? 'https://conceptualcoder.herokuapp.com' : 'http://localhost:4001',
-            src: process.env.NODE_ENV === 'production' ? 'https://conceptualcoder.herokuapp.com' : 'http://localhost:3000'
+            redirect: false
         }
 
         this.checkLogin = this.checkLogin.bind(this);
@@ -22,13 +20,12 @@ export class EditPage extends React.Component {
     }
 
     checkLogin() {
-        fetch(`${this.state.link}/users/checkLogin`, {
+        fetch('/users/checkLogin', {
            method: 'get',
               credentials: "include",
               headers: {
                  'Content-Type': 'application/json',
-                 'Accept': 'application/json',
-                 'Access-Control-Allow-Origin': this.state.src
+                 'Accept': 'application/json'
            }
         })
         .then(response => response.json())
