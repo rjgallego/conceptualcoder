@@ -17,7 +17,6 @@ export class EditForm extends React.Component {
             firstParagraph: '',
             topic: '',
             reroute: false
-            // link: process.env.NODE_ENV === 'production' ? 'https://conceptualcoder.herokuapp.com' : 'http://localhost:4001'
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
