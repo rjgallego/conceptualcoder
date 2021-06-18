@@ -6,7 +6,6 @@ export class DeletePage extends React.Component {
       super(props);
       this.state = {
         id: this.props.match.params.id
-        // link: process.env.NODE_ENV === 'production' ? 'https://conceptualcoder.herokuapp.com' : 'http://localhost:4001'
       }
 
       this.deleteArticle = this.deleteArticle.bind(this);
