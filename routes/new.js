@@ -46,9 +46,9 @@ newRouter.post('/', upload.single("img"), (req, res) => {
             }
             const article = new Article(articleInfo);
 
-            article.save(function(err, newArticle) {
+            article.save(function(err) {
                 if(err) res.send(err)
-                else res.send(newArticle)
+                else return
             })
         }
     })
