@@ -11,8 +11,7 @@ export class Articles extends React.Component {
   
         this.state = {
            articles: [],
-           loggedIn: false,
-           link: process.env.NODE_ENV === 'production' ? 'https://conceptualcoder.herokuapp.com' : 'http://localhost:4001'
+           loggedIn: false
         }
 
         this.getArticles = this.getArticles.bind(this);
@@ -38,14 +37,8 @@ export class Articles extends React.Component {
      }
 
      getArticles() {
-        fetch(`${this.state.link}/${this.props.filter}`, {
-            method: 'get',
-            credentials: 'include',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json',
-                'Access-Control-Allow-Origin': this.state.link
-            }
+        fetch(`/${this.props.filter}`, {
+            method: 'get'
          })
         .then(response => response.json())
         .then(jsonResponse => this.setState({ articles: jsonResponse}));
