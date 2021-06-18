@@ -14,7 +14,6 @@ export class Home extends React.Component {
    }
    
    setFilter(filter){
-      console.log(process.env.NODE_ENV);
       this.setState({
          filter : filter === this.state.filter ? 'all' : filter
       });
