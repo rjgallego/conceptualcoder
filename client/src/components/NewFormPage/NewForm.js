@@ -29,8 +29,7 @@ export class NewForm extends React.Component {
         if(e.target.files.length > 0) {
             this.setState({
                 fileName: e.target.files[0].name,
-                image: e.target.files[0],
-                link: process.env.NODE_ENV === 'production' ? 'https://conceptualcoder.herokuapp.com' : 'http://localhost:4001'
+                image: e.target.files[0]
             })
         }
     }
@@ -58,7 +57,7 @@ export class NewForm extends React.Component {
         data.append("topic", this.state.topic);
         data.append("img", this.state.image);
 
-        axios.post(`${this.state.link}/new`, data).then(() => {
+        axios.post('/new', data).then(() => {
             this.setState({
                 reroute: true
             })

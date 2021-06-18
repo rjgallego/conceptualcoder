@@ -9,8 +9,7 @@ export class NewFormPage extends React.Component {
         super(props);
 
         this.state = {
-            redirect: false,
-            link: process.env.NODE_ENV === 'production' ? 'https://conceptualcoder.herokuapp.com' : 'http://localhost:4001'
+            redirect: false
         }
 
         this.checkLogin = this.checkLogin.bind(this);
@@ -21,14 +20,9 @@ export class NewFormPage extends React.Component {
     }
 
     checkLogin() {
-        fetch(`${this.state.link}/users/checkLogin`, {
-           method: 'get',
-              credentials: "include",
-              headers: {
-                 'Content-Type': 'application/json',
-                 'Accept': 'application/json',
-                 'Access-Control-Allow-Origin': this.state.link
-           }
+        fetch('/users/checkLogin', {
+            method: 'get',
+            credentials: "include"
         })
         .then(response => response.json())
         .then(jsonResponse => {
