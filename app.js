@@ -51,7 +51,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-//app.use('/', indexRouter);
+app.use('/', indexRouter);
 app.use('/new', newRouter);
 app.use('/article', articleRouter);
 app.use('/delete', deleteRouter);
@@ -63,7 +63,6 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'client/build', 'index.html'))
 });
-
 
 app.listen(PORT, () => {
   console.log("Listening on port " + PORT);
